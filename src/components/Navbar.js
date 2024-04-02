@@ -19,12 +19,12 @@ const Navbar = () => {
     window.addEventListener("scroll",changeColor);
   return (
     <div className={color ? "header header-bg" : "header" }>
-      <Link to="/">
+      <Link to="/shaneliu">
         <h1 className="btn-touch">Xin Liu</h1>
       </Link>
       <ul className={click ?"nav-menu active":"nav-menu"}>
         <li>
-            <Link to ="/">Home</Link>
+            <Link to ="/shaneliu">Home</Link>
 
         </li>
         <li>
