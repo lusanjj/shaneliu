@@ -6,7 +6,7 @@ const ProjectCardData = [
         imgsrc:pro1,
         title:"Personal web design",
         text:"Personal web that contains XIN's infomations and projects.",
-        view:"https://lusanjj.github.io/shaneliu/",
+        view:"https://lusanjj.github.io/shaneliu/", 
         source:"https://github.com/lusanjj/xinliu",
     },
     {
