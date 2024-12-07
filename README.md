@@ -2,4 +2,4 @@
 
 Info: this project is developed by React.js, HTML5,CSS3,and JAVASCRIPT.
 Purpose: To present the projects and biography about the author(Xin Liu).
-</a>https://lusanjj.github.io/xinliu/</a>
+</a>https://lusanjj.github.io/shaneliu/</a>
