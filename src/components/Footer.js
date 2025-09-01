@@ -14,14 +14,14 @@ const Footer = () => {
                   <FaSchool size={25} style={{ color: "#fff", marginRight: "1rem" }} />
                   <p>Toronto Metropolitan University </p>
                   
-                  <p style={{textAlign:"center"}}>
+                  <p style={{textAlign:"left"}}>
                     (Ryerson University)
                   </p>
                 </p>
             </div>
 
             <div className="email">
-               <p><FaMailBulk size={25} style={{ color: "#fff", marginRight: "1rem" }} /> <p>x13liu@torontomu.ca</p></p>        
+               <p><FaMailBulk size={25} style={{ color: "#fff", marginRight: "1rem" }} /> <p>lx1326607292@gmail.com</p></p>        
             </div>
             
             {/* <div className="github">

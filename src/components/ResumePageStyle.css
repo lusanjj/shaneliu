@@ -1,6 +1,65 @@
-@media screen and (max-width:830px) {
-    .img{
-        width: 100%;
-    }
-    
+/* 外层容器 */
+.resume-page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background: #111; /* 背景深色，突出简历 */
+}
+
+/* 简历容器 */
+.resume-container {
+  max-width: 900px; /* 控制最大宽度 */
+  width: 100%;
+  background: #fff; /* 白底衬托简历 */
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  padding: 1rem;
+  overflow: auto;
+  max-height: 80vh; /* 高度限制，大屏时可以滚动 */
+}
+
+/* 简历图片 */
+.resume-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+/* 下载按钮 */
+.resume-actions {
+  margin-top: 1.5rem;
+}
+
+.download-btn {
+  background: #fdd835;
+  color: #000;
+  font-weight: 700;
+  padding: 0.7rem 1.4rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.download-btn:hover {
+  background: #ffeb3b;
+  transform: translateY(-2px);
+}
+
+/* 移动端适配 */
+@media (max-width: 830px) {
+  .resume-container {
+    max-height: none; /* 小屏时去掉高度限制 */
+    padding: 0.5rem;
+  }
+
+  .download-btn {
+    width: 100%;
+    text-align: center;
+    display: block;
+  }
 }

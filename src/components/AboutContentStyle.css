@@ -1,41 +1,87 @@
-.about{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    height: 100%;
-    margin-top: 3rem ;
-    margin-bottom: 6rem;
+:root {
+  --about-gap: clamp(16px, 3vw, 32px);
+  --about-maxw: 1100px;
 }
-.about .name{
-    margin: 1rem 5rem;
-    margin-top: -25rem ;
-    text-align: center;
-    font-size: 2.5em;
+
+/* 外层容器：居中 + 栅格 */
+.about {
+  width: 100%;
+  margin: 3rem auto 6rem;
+  padding: 0 16px;
+  max-width: var(--about-maxw);
+  color: #fff;
+
+  display: grid;
+  align-items: center;
+  gap: var(--about-gap);
+
+  /* 左图右文两列；右侧稍宽 */
+  grid-template-columns: minmax(220px, 1fr) minmax(320px, 1.3fr);
+  grid-template-areas:
+    "img name"
+    "img text";
 }
-.about .describ{
-    width: 20%;
-    margin:2rem 1.2rem;
-    margin-left: -16rem;
+
+/* 图片 */
+.about .img {
+  grid-area: img;
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+  object-fit: cover;
+  justify-self: center;
+}
+
+/* 标题 */
+.about .name {
+  grid-area: name;
+  margin: 0;
+  text-align: left;
+  line-height: 1.1;
+  font-weight: 800;
+  font-size: clamp(28px, 5vw, 56px);
+}
+
+/* 文本容器（占据 grid-area:text） */
+.about__text {
+  grid-area: text;
+}
+
+/* 段落样式（不要再设置 grid-area） */
+.describ {
+  margin: 0 0 1rem 0;
+  text-align: left;
+  line-height: 1.7;
+  font-size: clamp(15px, 1.6vw, 18px);
+  max-width: 75ch;
+}
+
+/* 小屏：堆叠布局并限制图片尺寸 */
+@media (max-width: 900px) {
+  .about {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "img"
+      "name"
+      "text";
+    justify-items: center;
     text-align: left;
+  }
 
+  .about .img {
+    width: clamp(180px, 68vw, 320px);
+    max-height: 45vh;
+  }
+
+  .about .name {
+    text-align: center;
+    margin-top: 0.5rem;
+    font-size: clamp(24px, 6vw, 36px);
+  }
+
+  .describ {
+    max-width: 60ch;
+  }
 }
-
-@media screen and (max-width:1280px) {
-    .about .name{
-        margin: 2rem 2rem;
-        text-align: center;
-        font-size: 2em;
-    }
-    .about .describ{
-        align-items: center;
-        margin:1rem 1.2rem;
-        font-size: 1rem;
-        width: 70%;
-
-    }
-
-    
-}
-

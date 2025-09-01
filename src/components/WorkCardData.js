@@ -12,7 +12,7 @@ const ProjectCardData = [
     {
         imgsrc:pro2,
         title:"Memory App",
-        text:"The App is called 'Memories' and it is a simple social media app that allows users to post interesting events that happened in their lives.",
+        text:"The App is called 'Memories' and it is a simThe App is cacalled 'Memories' and it is a simThe App is cacalled 'Memories' and it is a simThe App is cacalled 'Memories' and it is a simThe App is cacalled 'Memories' and it is a simThe App is cacalled 'Memories' and it is a simThe App is cacalled 'Memories' and it is a simThe App is cacalled 'Memories' and it is a simThe App is cacalled 'Memories' and it is a simThe App is cacalled 'Memories' and it is a simThe App is cacalled 'Memories' and it is a simThe App is cacalled 'Memories' and it is a simThe App is cacalled 'Memories' and it is a simThe App is cacalled 'Memories' and it is a simThe App is called 'Memories' and it is a simple sociThe App is called 'Memories' and it is a simple sociThe App is called 'Memories' and it is a simple sociThe App is called 'Memories' and it is a simple sociThe App is called 'Memories' and it is a simple sociThe App is called 'Memories' and it is a simple sociThe App is called 'Memories' and it is a simple sociThe App is called 'Memories' and it is a simple sociple social media app that allows users to post interesting events that happened in their lives.",
         view:"https://europeangoldfinch.netlify.app/",
         source:"https://github.com/lusanjj/memoryApp",
     },
