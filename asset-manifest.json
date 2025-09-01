@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/shaneliu/static/css/main.ef911115.css",
-    "main.js": "/shaneliu/static/js/main.3cc9d086.js",
+    "main.css": "/shaneliu/static/css/main.444a1cf6.css",
+    "main.js": "/shaneliu/static/js/main.119691c6.js",
     "static/media/personalWeb.png": "/shaneliu/static/media/personalWeb.e53c7d0237d1de4736d1.png",
     "static/media/into-img.jpg": "/shaneliu/static/media/into-img.ff2890c0618de6d66560.jpg",
     "static/media/memoriesProject.png": "/shaneliu/static/media/memoriesProject.de86eed1e14b0a53019a.png",
     "static/media/wechat.jpg": "/shaneliu/static/media/wechat.1b36b2bb6a21b07dfd8b.jpg",
+    "static/media/resume.png": "/shaneliu/static/media/resume.3478029ca66138fa0c6d.png",
     "static/media/xin.jpg": "/shaneliu/static/media/xin.f24c18f161d8045315fc.jpg",
-    "static/media/Resume.jpg": "/shaneliu/static/media/Resume.c026b5d8384e1e301183.jpg",
     "static/media/ins.png": "/shaneliu/static/media/ins.f5651ef269cad6d25b1b.png",
     "static/media/projects.png": "/shaneliu/static/media/projects.e0ab3139f71edf0173bd.png",
     "index.html": "/shaneliu/index.html",
-    "main.ef911115.css.map": "/shaneliu/static/css/main.ef911115.css.map",
-    "main.3cc9d086.js.map": "/shaneliu/static/js/main.3cc9d086.js.map"
+    "main.444a1cf6.css.map": "/shaneliu/static/css/main.444a1cf6.css.map",
+    "main.119691c6.js.map": "/shaneliu/static/js/main.119691c6.js.map"
   },
   "entrypoints": [
-    "static/css/main.ef911115.css",
-    "static/js/main.3cc9d086.js"
+    "static/css/main.444a1cf6.css",
+    "static/js/main.119691c6.js"
   ]
 }
