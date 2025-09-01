@@ -1,175 +1,140 @@
-/* WorkCardStyles.css — 方案A */
+/* ========== WorkCardStyles.css (方案 A 优化版) ========== */
 
-.project-heading{
-  text-align:center;
-  padding:2rem 0;
+/* 标题 */
+.project-heading {
+  text-align: center;
+  padding: 2rem 0;
 }
 
 /* 三列整齐网格 */
-.project-container{
-  max-width:1140px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:repeat(3, 1fr);
-  gap:40px;
-  padding-bottom:5rem;
+.project-container {
+  max-width: 1140px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  padding-bottom: 5rem;
 }
 
-/* 卡片：列向flex，按钮永远在底部；统一高度防止整排被拉高 */
-.project-card{
-  background:#1a1919;
-  padding:1.2rem 1rem;
-  display:flex;
-  flex-direction:column;
-  height:520px;                 /* 你可按内容调 480~560 */
-  border-radius:8px;
+/* 卡片：统一高度，按钮固定在底部 */
+.project-card {
+  background: #1a1919;
+  padding: 1.2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  height: 540px; /* 固定高度，保持三列对齐 */
+  border-radius: 8px;
+  box-sizing: border-box;
 }
 
-/* 统一图片高度让卡片规整 */
-.project-card img{
-  width:100%;
-  height:180px;
-  object-fit:cover;
-  border-radius:6px;
+/* 图片统一高度 */
+.project-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
 }
 
-.project-title{
-  color:#fff;
-  padding:1rem 0 .5rem;
+.project-title {
+  color: #fff;
+  padding: 1rem 0 0.5rem;
 }
 
-.pro-content{
-  flex:1;
-  display:flex;
-  flex-direction:column;
-  min-height:0;                 /* 允许内部滚动 */
+/* 内容容器 */
+.pro-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
 }
 
-/* 描述：默认行数裁剪 + 省略号 */
-.pro-desc{
-  color:#eaeaea;
-  text-align:justify;
-  line-height:1.6;
-  margin:0 0 .75rem 0;
-  overflow:hidden;
-}
-
-.pro-desc.clamp{
-  display:-webkit-box;
-  -webkit-box-orient:vertical;
-  -webkit-line-clamp:4;         /* 桌面端显示4行 */
-}
-
-/* 展开时：仅该区域滚动，不增加卡片高度 */
-.pro-desc.expanded{
-  display:block;
-  max-height:12rem;             /* 展开后可视高度 */
-  overflow:auto;
-  scrollbar-width:thin;
-}
-
-/* “读取更多”按钮 */
-.readmore{
-  align-self:flex-start;
-  background:none;
-  border:none;
-  color:#fdd835;
-  font-weight:700;
-  padding:0;
-  margin:.25rem 0 1rem;
-  cursor:pointer;
-}
-
-/* 底部按钮区固定在卡片底 */
-.pro-btns{
-  margin-top:auto;
-  display:flex;
-  justify-content:space-between;
-  gap:.8rem;
-}
-
-.pro-btns .btn{
-  padding:.6rem 1.2rem;
-  background:#fdd835;
-  color:#000;
-  font-weight:700;
-  letter-spacing:.3px;
-  border-radius:6px;
-  transition:transform .08s ease, background .2s ease;
-}
-.pro-btns .btn:hover{ transform:translateY(-1px); }
-.pro-btns .btn:active{ transform:translateY(0); }
-
-/* 响应式：单列展示、多给两行 */
-@media (max-width:830px){
-  .project-container{
-    max-width:92%;
-    grid-template-columns:1fr;
-  }
-  .project-card{
-    height:500px;
-  }
-  .project-card img{ height:200px; }
-  .pro-desc.clamp{ -webkit-line-clamp:6; }    /* 移动端6行 */
-}
-/* WorkCardStyles.css — 方案A（改进版，展开更大） */
-
-.project-card{
-  background:#1a1919;
-  padding:1.2rem 1rem;
-  display:flex;
-  flex-direction:column;
-  height:540px;                  /* 卡片整体稍微加高一点（原来 520px） */
-  border-radius:8px;
-}
-
-/* 描述：默认裁剪 */
-.pro-desc{
-  color:#eaeaea;
-  text-align:justify;
-  line-height:1.6;
-  margin:0 0 .75rem 0;
-  overflow:hidden;
+/* 描述文本 */
+.pro-desc {
+  color: #eaeaea;
+  text-align: left;         /* ✅ 更自然，不再两端对齐 */
+  line-height: 1.5;         /* ✅ 更紧凑 */
+  font-size: 0.95rem;       /* ✅ 字体稍小，阅读舒适 */
+  letter-spacing: 0.2px;    /* ✅ 微调字间距 */
+  margin: 0 0 0.75rem 0;
+  overflow: hidden;
+  word-break: break-word;   /* ✅ 避免超长单词撑破容器 */
+  transition: max-height 0.3s ease; /* ✅ 平滑过渡 */
 }
 
 /* 收起状态：4行 */
-.pro-desc.clamp{
-  display:-webkit-box;
-  -webkit-box-orient:vertical;
-  -webkit-line-clamp:4;
+.pro-desc.clamp {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  max-height: 6.2rem; /* 约 4 行 */
 }
 
-/* ✅ 展开状态：直接给更大高度，不再小小一块 */
-.pro-desc.expanded{
-  display:block;
-  max-height:22rem;              /* 原来 12rem，这里调大 */
-  overflow:auto;
-  scrollbar-width:thin;
-  padding-right:40px;             /* 给滚动条留一点空隙 */
+/* 展开状态：高度更大，可滚动 */
+.pro-desc.expanded {
+  display: block;
+  max-height: 22rem;  /* ✅ 比原来大，能容纳更多内容 */
+  overflow: auto;
+  scrollbar-width: thin;
+  padding-right: 6px; /* ✅ 给滚动条留空间 */
 }
 
-.readmore{
-  align-self:flex-start;
-  background:none;
-  border:none;
-  color:#fdd835;
-  font-weight:700;
-  padding:0;
-  margin:.25rem 0 1rem;
-  cursor:pointer;
+/* “Read more”按钮 */
+.readmore {
+  align-self: flex-start;
+  background: none;
+  border: none;
+  color: #fdd835;
+  font-weight: 700;
+  padding: 0;
+  margin: 0.25rem 0 1rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
 }
 
-.pro-btns{
-  margin-top:auto;
-  display:flex;
-  justify-content:space-between;
-  gap:.8rem;
+.readmore:hover {
+  color: #ffe347;
 }
 
-.pro-btns .btn{
-  padding:.6rem 1.2rem;
-  background:#fdd835;
-  color:#000;
-  font-weight:700;
-  border-radius:6px;
+/* 底部按钮条 */
+.pro-btns {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+
+.pro-btns .btn {
+  padding: 0.6rem 1.2rem;
+  background: #fdd835;
+  color: #000;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  border-radius: 6px;
+  transition: transform 0.08s ease, background 0.2s ease;
+}
+
+.pro-btns .btn:hover {
+  transform: translateY(-1px);
+}
+
+/* 响应式：单列展示，展开更大 */
+@media (max-width: 830px) {
+  .project-container {
+    max-width: 92%;
+    grid-template-columns: 1fr;
+  }
+  .project-card {
+    height: 560px; /* 手机端稍高 */
+  }
+  .project-card img {
+    height: 200px;
+  }
+  .pro-desc.clamp {
+    -webkit-line-clamp: 6; /* 手机端显示6行 */
+    max-height: 9rem;
+  }
+  .pro-desc.expanded {
+    max-height: 26rem; /* 手机展开更高 */
+  }
 }
